@@ -11,25 +11,18 @@ namespace unitTest
             Console.WriteLine("This is SetUp");
         }
 
-        [Test]
-        [Category("Smoke")]
-        public void Test1()
-        {
-            Assert.Pass();
+        [TearDown]
+        public void Teardown() {
+            Console.WriteLine("This is TearDown");
         }
 
+        [Category("Smoke")]
         [Test]
-        [Category("Sanity")]
-        public void Test2()
+        public void xxx()
         {
             var x = 1;
             var y = 2;
             Assert.AreEqual(x, y);
-        }
-
-        [TearDown]
-        public void Teardown() {
-            Console.WriteLine("This is TearDown");
         }
     }
 }
