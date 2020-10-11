@@ -1,0 +1,24 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Wojciech.Nijak/NUnitTestProject1/NUnitTestProject1/obj
+/Slawomir.Ostrowski/NUnitTestProject1/NUnitTestProject1/obj
+/Krzysztof Szadziun/NUnitTestProject1/NUnitTestProject1/obj
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Release
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj
+/Gabriel.Adamczuk/NUnitTestProject1/NUnitTestProject1/obj
+/Dawid.Partyka/unitTest/obj
+/Damian Wąsik/NUnitTestProject1/NUnitTestProject1/obj
+/.vs
+/Joe.DOe/NUnitTestProject1/NUnitTestProject1/obj
+/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Money.pdb
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Money.exe
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Cash.csproj.FileListAbsolute.txt
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Cash.csproj.CoreCompileInputs.cache
+/Joe.DOe/NUnitTestProject1/.vs/NUnitTestProject1/v16
+/Joe.DOe/NUnitTestProject1/NUnitTestProject1/bin/Debug/netcoreapp3.1
+/Joe.DOe/NUnitTestProject1/.vs/NUnitTestProject1/DesignTimeBuild/.dtbcache.v2
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug
+/Joe.DOe/NUnitTestProject1/NUnitTestProject1.sln.DotSettings.user

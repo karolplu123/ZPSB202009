@@ -10,7 +10,6 @@ namespace NUnitTestProject1
         {
             Console.WriteLine("This is SetUp");
         }
-
         [TearDown]
         protected void Teardown()
         {
@@ -19,16 +18,25 @@ namespace NUnitTestProject1
 
         [Test]
         [Category("Smoke")]
-        public void testAreEqual()
+        public void testFirst()
         {
-            var x = 1;
-            var y = 1;
+            var x = 2;
+            var y = 3;
             Assert.AreEqual(x, y);
         }
 
         [Test]
         [Category("Sanity")]
-        public void testAreNotEqual()
+        public void testScnd()
+        {
+            var x = 1;
+            var y = 2;
+            Assert.AreEqual(x, y);
+        }
+
+        [Test]
+        [Category("Smoke")]
+        public void testThir()
         {
             var x = 1;
             var y = 2;
