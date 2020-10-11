@@ -19,7 +19,6 @@ namespace NUnitTestProject1
 
         [Test]
         [Category("Smoke")]
-
         public void testAreEqual()
         {
             var x = 1;
@@ -29,7 +28,6 @@ namespace NUnitTestProject1
 
         [Test]
         [Category("Sanity")]
-
         public void testAreNotEqual()
         {
             var x = 1;
