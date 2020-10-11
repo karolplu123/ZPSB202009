@@ -26,7 +26,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj": {
+                "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -68,6 +72,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj",
+        "projectName": "Cash",
+        "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj"
+      },
+      "frameworks": {
+        "net461": {}
       }
     }
   }

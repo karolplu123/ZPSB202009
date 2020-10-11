@@ -1225,6 +1225,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Cash/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Cash.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cash.dll": {}
+        }
       }
     }
   },
@@ -4618,10 +4627,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Cash/1.0.0": {
+      "type": "project",
+      "path": "../../../Krzysiek.Gibert/MoneyZPSB/Money/Cash.csproj",
+      "msbuildProject": "../../../Krzysiek.Gibert/MoneyZPSB/Money/Cash.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Cash >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
       "nunit >= 3.12.0"
@@ -4652,7 +4667,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj": {
+              "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
