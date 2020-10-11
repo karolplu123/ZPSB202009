@@ -1,13 +1,18 @@
 using NUnit.Framework;
 using System;
+using NUnit.Samples.Cash;
 
 namespace unitTest
 {
     public class Tests
     {
+        private Cash f14CHF;
+
         [SetUp]
         public void Setup()
         {
+            f14CHF = new Cash(14, "CHF");
+
             Console.WriteLine("This is SetUp");
         }
 
@@ -27,6 +32,18 @@ namespace unitTest
             var x = 3;
             var y = 3;
             Assert.AreEqual(x, y);
+        }
+
+        /// <summary>
+        /// Assert that multiplying currency in Cash happens correctly
+        /// </summary>
+        ///
+        [Test]
+        public void SimpleMultiply()
+        {
+            // [14 CHF] *2 == [28 CHF]
+            Cash expected = new Cash(28, "CHF");
+            Assert.AreEqual(expected, f14CHF.Multiply(2));
         }
 
         [TearDown]
