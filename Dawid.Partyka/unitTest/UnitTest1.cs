@@ -13,17 +13,19 @@ namespace unitTest
 
         [Test]
         [Category("Smoke")]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
-
-        [Test]
-        [Category("Sanity")]
-        public void Test2()
+        public void xxx()
         {
             var x = 1;
             var y = 2;
+            Assert.AreEqual(x, y);
+        }
+
+        [Test]
+        [Category("Smoke")]
+        public void xx()
+        {
+            var x = 3;
+            var y = 3;
             Assert.AreEqual(x, y);
         }
 
