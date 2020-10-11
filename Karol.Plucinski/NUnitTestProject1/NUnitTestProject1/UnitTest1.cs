@@ -35,7 +35,7 @@ namespace NUnitTestProject1
         }
         [Category("Smoke")]
         [Test]
-        public void xxx()
+        public void xxy()
         {
             var x = 1;
             var y = 1;
