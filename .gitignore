@@ -1,23 +1,36 @@
 ﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
 ################################################################################
 
-/Wojciech.Nijak/NUnitTestProject1/NUnitTestProject1/obj
-/Slawomir.Ostrowski/NUnitTestProject1/NUnitTestProject1/obj
-/Krzysztof Szadziun/NUnitTestProject1/NUnitTestProject1/obj
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
 /Krzysiek.Gibert/MoneyZPSB/Money/obj/Release
-/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj
-/Gabriel.Adamczuk/NUnitTestProject1/NUnitTestProject1/obj
-/Dawid.Partyka/unitTest/obj
-/Damian Wąsik/NUnitTestProject1/NUnitTestProject1/obj
-/.vs
-/Joe.DOe/NUnitTestProject1/NUnitTestProject1/obj
-/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug
-/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Money.pdb
-/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Money.exe
-/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Cash.csproj.FileListAbsolute.txt
-/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Cash.csproj.CoreCompileInputs.cache
-/Joe.DOe/NUnitTestProject1/.vs/NUnitTestProject1/v16
-/Joe.DOe/NUnitTestProject1/NUnitTestProject1/bin/Debug/netcoreapp3.1
-/Joe.DOe/NUnitTestProject1/.vs/NUnitTestProject1/DesignTimeBuild/.dtbcache.v2
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/Cash.csprojAssemblyReference.cache
+/Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttributes.cs
 /Krzysiek.Gibert/MoneyZPSB/Money/obj/Debug
+/Krzysiek.Gibert/MoneyZPSB/Money/obj
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/project.nuget.cache
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/project.assets.json
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/NUnitTestProject1.csproj.nuget.g.targets
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/NUnitTestProject1.csproj.nuget.g.props
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/NUnitTestProject1.csproj.nuget.dgspec.json
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1/NUnitTestProject1.csprojAssemblyReference.cache
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1/NUnitTestProject1.assets.cache
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1/NUnitTestProject1.AssemblyInfoInputs.cache
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1/NUnitTestProject1.AssemblyInfo.cs
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj/Debug/netcoreapp3.1
+/Karol.Plucinski/NUnitTestProject1/NUnitTestProject1/obj
+/Karol.Plucinski/NUnitTestProject1/.vs/NUnitTestProject1/v16/.suo
+/Karol.Plucinski/NUnitTestProject1/.vs/NUnitTestProject1/v16
+/Karol.Plucinski/NUnitTestProject1
+/.vs/ZPSB202009/v16/.suo
+/.vs/ZPSB202009/v16
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs
+/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug/Money.pdb
+/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug/Money.exe.config
+/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug/Money.exe
+/Krzysiek.Gibert/MoneyZPSB/Money/bin/Debug
