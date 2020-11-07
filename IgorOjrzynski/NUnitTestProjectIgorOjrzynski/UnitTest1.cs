@@ -1,10 +1,13 @@
 using System;
 using NUnit.Framework;
+using NUnit.Samples.Cash;
 
 namespace NUnitTestProjectIgorOjrzynski
 {
     public class Tests
     {
+        private Cash f14CHF;
+
         [SetUp]
         public void Setup()
         {
@@ -36,5 +39,6 @@ namespace NUnitTestProjectIgorOjrzynski
 
             Assert.AreEqual(x, y);
         }
+
     }
 }
