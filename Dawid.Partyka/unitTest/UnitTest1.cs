@@ -46,6 +46,98 @@ namespace unitTest
             Assert.AreEqual(expected, f14CHF.Multiply(2));
         }
 
+        [Test]
+        public void SimpleAdd()
+        {
+            // [14 CHF] + [14 CHF] - [14 CHF] == [14 CHF]
+            Cash expected = new Cash(14, "CHF");
+            f14CHF.Add(expected);
+            f14CHF.Subtract(expected);
+
+            Assert.AreEqual(expected, f14CHF);
+        }
+
+        [Test]
+        public void AddMoneyTest()
+        {
+            Cash add = new Cash(5, "USD");
+            CashBag reference = new CashBag(add, f14CHF);
+
+            Assert.AreEqual(reference, f14CHF.AddMoney(add));
+        }
+
+        [Test]
+        public void EqualsMethodWithNotHandledObject()
+        {
+            CashBag notHandledObject = new CashBag(new Cash(5, "USD"), f14CHF);
+
+            Assert.AreEqual(false, f14CHF.Equals(notHandledObject));
+        }
+
+        [Test]
+        public void isZeroAndNegateCheck()
+        {
+            Cash expected = new Cash(0, "CHF");
+            Assert.AreEqual(expected, f14CHF.Add(f14CHF.Negate()));
+        }
+
+        [Test]
+        public void MoneyBagTest()
+        {
+            Cash start = new Cash(6, "CHF");
+            Cash add = new Cash(5, "PLN");
+            CashBag test = new CashBag(start, add);
+            
+            Assert.AreEqual(start.AddMoneyBag(test), test.Multiply(2).Subtract(add));
+        }
+
+        [Test]
+        public void SetCurrencyShouldntChangeAnything()
+        {
+            Cash chf14 = new Cash(14, "CHF");
+            chf14.SetCurrency("test");
+         
+            Assert.AreEqual(f14CHF, chf14);
+        }
+
+        [Test]
+        public void stringTest()
+        {
+            Assert.AreEqual("[14 CHF]", f14CHF.ToString());
+        }
+
+        [Test]
+        public void Hashes()
+        {
+            Cash chf = new Cash(6, "CHF");
+            Cash chf2 = new Cash(3, "CHF");
+
+            Assert.AreEqual(chf.GetHashCode(), chf2.Multiply(2).GetHashCode());
+        }
+
+        [Test]
+        public void CashBagNegate()
+        {
+            CashBag test = new CashBag(new Cash(1, "CAD"), new Cash(1, "PLN"));
+            test = (CashBag)test.Negate();
+
+            Assert.AreEqual(new CashBag(new Cash(-1, "PLN"), new Cash(-1, "CAD")), test);
+        }
+
+        [Test]
+        public void CashBagAppend()
+        {
+            Cash chf1 = new Cash(6, "CHF");
+            Cash chf2 = (Cash)chf1.Negate();
+            Cash cad = new Cash(1, "CAD");
+            Cash usd = new Cash(7, "USD");
+
+            CashBag test = new CashBag(new CashBag(chf1, cad), new CashBag(chf2, usd));
+            CashBag compare = new CashBag(cad, usd);
+
+            Assert.AreEqual(test, compare);
+        }
+
         [TearDown]
         public void Teardown() {
             Console.WriteLine("This is TearDown");
