@@ -11,6 +11,7 @@ namespace NUnitTestProjectIgorOjrzynski
         [SetUp]
         public void Setup()
         {
+            f14CHF = new Cash(14, "CHF");
             Console.WriteLine("This is Setup in CLI");
         }
 
@@ -40,5 +41,15 @@ namespace NUnitTestProjectIgorOjrzynski
             Assert.AreEqual(x, y);
         }
 
+        /// <summary>
+        /// Assert that multiplying currency in cach happens correctly
+        /// </summary>
+        [Test]
+        public void SimpleMultiply()
+        {
+            // [14 CHF] *2 == [28 CHF]
+            Cash expected = new Cash(28, "CHF");
+            Assert.AreEqual(expected, f14CHF.Multiply(2));
+        }
     }
 }
