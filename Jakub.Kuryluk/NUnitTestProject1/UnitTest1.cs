@@ -1,20 +1,34 @@
 using NUnit.Framework;
+using System;
 
 namespace NUnitTestProject1
 {
     public class Tests
     {
         [SetUp]
-        public void Setup()
-        {
+        protected void SetUp() {
+            Console.WriteLine("This is SetUp");
         }
 
-        [Test]
-        public void Test1()
+        [TearDown]
+        protected void Teardown() {
+            Console.WriteLine("This is Teardown");
+        }
+
+        [Test, Category("Smoke")]
+        public void xxx()
         {
+            var x = 1;
+            var y = 2;
+            Assert.AreEqual(x, y);
+        }
 
-
-            Assert.Pass();
+        [Test, Category("Sanity")]
+        public void xxx1()
+        {
+            var x = 1;
+            var y = 2;
+            Assert.AreEqual(x, y);
         }
     }
 }
