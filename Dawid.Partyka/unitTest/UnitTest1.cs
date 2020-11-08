@@ -91,19 +91,42 @@ namespace unitTest
             Assert.AreEqual(start.AddMoneyBag(test), test.Multiply(2).Subtract(add));
         }
 
-        [Test]
-        public void SetCurrencyShouldntChangeAnything()
+        /// <summary>
+        /// Test set Currency , Data-Driven Testing
+        /// </summary>
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void SetCurrency_ChangeCurrencyToCHF_TwoObjectCurrenciesAreEqual(int amount)
         {
-            Cash chf14 = new Cash(14, "CHF");
-            chf14.SetCurrency("test");
-         
-            Assert.AreEqual(f14CHF, chf14);
+            // arrange
+            Cash c2 = new Cash(amount, "CHF");
+            Cash c = new Cash(amount, "PLN");
+
+            // act
+            c.SetCurrency("CHF");
+
+            // assert
+            Assert.AreEqual(c2.Currency, c.Currency);
         }
 
-        [Test]
-        public void stringTest()
+        /// <summary>
+        ///  TDD Cash_class.ToString() test
+        /// </summary>
+
+        [TestCase(14, "CHF")]
+        [TestCase(15, "PLN")]
+        [TestCase(0, "CAD")]
+        public void stringTest(int amount, string currency)
         {
-            Assert.AreEqual("[14 CHF]", f14CHF.ToString());
+            // arrange
+            Cash test = new Cash(amount, currency);
+
+            // act
+            string toTest = test.ToString();
+
+            // assert
+            Assert.AreEqual($"[{amount} {currency}]", toTest);
         }
 
         [Test]
