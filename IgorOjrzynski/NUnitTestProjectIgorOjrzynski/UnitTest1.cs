@@ -100,6 +100,22 @@ namespace NUnitTestProjectIgorOjrzynski
             Assert.AreEqual(c2.Currency, c.Currency);
         }
 
+        [Test]
+        [Category("Unit")]
+        public void TestMock()
+        {
+            //assert
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new
+           Cash(1, "CHF"));
+            //act
+            Cash.AddMoneyBag(mockBag.Object);
+            //assert
+            Assert.IsTrue(true);
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
+        }
+
 
     }
 }
