@@ -1,4 +1,5 @@
 using System;
+using Moq;
 using NUnit.Framework;
 using NUnit.Samples.Cash;
 
@@ -102,6 +103,7 @@ namespace NUnitTestProjectIgorOjrzynski
 
         [Test]
         [Category("Unit")]
+        [Category("Integration")]
         public void TestMock()
         {
             //assert
@@ -113,7 +115,7 @@ namespace NUnitTestProjectIgorOjrzynski
             Cash.AddMoneyBag(mockBag.Object);
             //assert
             Assert.IsTrue(true);
-            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Once());
         }
 
 
