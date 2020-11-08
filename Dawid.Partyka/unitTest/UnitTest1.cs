@@ -117,7 +117,7 @@ namespace unitTest
         [TestCase(14, "CHF")]
         [TestCase(15, "PLN")]
         [TestCase(0, "CAD")]
-        public void stringTest(int amount, string currency)
+        public void ToString_GetStringOfClassCash_ReceivedStringIsCorrect(int amount, string currency)
         {
             // arrange
             Cash test = new Cash(amount, currency);
