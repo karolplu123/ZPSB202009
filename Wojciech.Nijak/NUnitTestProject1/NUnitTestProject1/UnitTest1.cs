@@ -53,5 +53,18 @@ namespace NUnitTestProject1
             var y = 2;
             Assert.AreNotEqual(x, y);
         }
+
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void SetCurrency_ChangeCurrencyToCHF_TwoCashCurrenciesAreEqual(int value)
+        {
+            Cash c = new Cash(value, "PLN");
+            Cash c2 = new Cash(value, "CHF");
+
+            c.SetCurrency("CHF");
+
+            Assert.AreEqual(c.Currency, c2.Currency);
+        }
     }
 }
