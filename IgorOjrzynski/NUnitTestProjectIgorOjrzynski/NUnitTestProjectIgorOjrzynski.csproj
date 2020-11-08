@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\Krzysiek.Gibert\MoneyZPSB\Money\Cash.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Krzysiek.Gibert\MoneyZPSB\Money\Cash.csproj" />
+  </ItemGroup>
+
 </Project>
