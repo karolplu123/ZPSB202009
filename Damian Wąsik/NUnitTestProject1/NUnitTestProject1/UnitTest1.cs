@@ -39,5 +39,14 @@ namespace NUnitTestProject1
             Assert.AreEqual(x, y);
         }
 
+        [Category("Smoke")]
+        [Test]
+        public void xxy()
+        {
+            var x = 1;
+            var y = 1;
+            Assert.AreEqual(x, y);
+        }
+
     }
 }

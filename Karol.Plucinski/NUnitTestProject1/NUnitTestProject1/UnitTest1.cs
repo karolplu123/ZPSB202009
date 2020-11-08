@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Samples.Cash;
 using System;
 
 namespace NUnitTestProject1
@@ -32,6 +33,27 @@ namespace NUnitTestProject1
             var x = 1;
             var y = 2;
             Assert.AreEqual(x, y);
+        }
+        [Category("Smoke")]
+        [Test]
+        public void xxy()
+        {
+            var x = 1;
+            var y = 1;
+            Assert.AreEqual(x, y);
+        }
+
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void ChangeSetCurrency_changeCurrenctToCHF_ThreeObjectCurrenciesIsAreEqualeCurrency(int value)
+        {
+            Cash c = new Cash(value, "PLN");
+            Cash c2 = new Cash(value, "CHF");
+
+            c.SetCurrency("CHF");
+
+            Assert.AreEqual(c.Currency, c2.Currency);
         }
     }
 }
