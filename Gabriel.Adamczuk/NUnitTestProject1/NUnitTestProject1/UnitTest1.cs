@@ -58,6 +58,39 @@ namespace NUnitTestProject1
             // [14 CHF] *2 == [28 CHF]
             Cash expected = new Cash(28, "CHF");
             Assert.AreEqual(expected, f14CHF.Multiply(2));
+
+        }
+        
+        [Test]
+        public void SimpleAdd()
+        {
+            // [14 CHF] + [14 CHF] == [28 CHF]
+            Cash expected = new Cash(14, "CHF");
+            f14CHF.Add(expected);
+            Assert.AreEqual(expected, f14CHF);
+
+        }
+
+
+        /// <summary>
+        /// Test set Currency , Data-Driven Testing
+        /// </summary>
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+
+        public void SetCurrency_changeCurrenctToCHF_ThreeObjectCurrenciesIsAreEqual(int value)
+        {
+            //arrange
+            Cash c2 = new Cash(value, "CHF");
+            Cash c = new Cash(value, "PLN");
+
+            //act
+            c.SetCurrency("CHF");
+
+
+            //assert
+            Assert.AreEqual(c2.Currency, c.Currency);
         }
 
     }
