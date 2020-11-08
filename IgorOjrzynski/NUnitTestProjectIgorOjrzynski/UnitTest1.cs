@@ -103,6 +103,7 @@ namespace NUnitTestProjectIgorOjrzynski
 
         [Test]
         [Category("Unit")]
+        [Category("Integration")]
         public void TestMock()
         {
             //assert
