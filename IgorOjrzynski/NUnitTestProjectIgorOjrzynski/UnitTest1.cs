@@ -1,4 +1,5 @@
 using System;
+using Moq;
 using NUnit.Framework;
 using NUnit.Samples.Cash;
 
@@ -98,6 +99,23 @@ namespace NUnitTestProjectIgorOjrzynski
 
             // assert
             Assert.AreEqual(c2.Currency, c.Currency);
+        }
+
+        [Test]
+        [Category("Unit")]
+        [Category("Integration")]
+        public void TestMock()
+        {
+            //assert
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new
+           Cash(1, "CHF"));
+            //act
+            Cash.AddMoneyBag(mockBag.Object);
+            //assert
+            Assert.IsTrue(true);
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Once());
         }
 
 
