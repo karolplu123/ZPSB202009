@@ -114,6 +114,55 @@ testRunner.Then("Cash Value is 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Multipy Cash by Value negative test")]
+        [NUnit.Framework.TestCaseAttribute("123", "5", "23", null)]
+        [NUnit.Framework.TestCaseAttribute("546", "23", "324", null)]
+        [NUnit.Framework.TestCaseAttribute("1", "3", "15", null)]
+        public virtual void MultipyCashByValueNegativeTest(string multiplyFirst, string multiplySecond, string result, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("multiplyFirst", multiplyFirst);
+            argumentsOfScenario.Add("multiplySecond", multiplySecond);
+            argumentsOfScenario.Add("result", result);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multipy Cash by Value negative test", null, tagsOfScenario, argumentsOfScenario);
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 11
+testRunner.Given("Cash CHF 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
+testRunner.When(string.Format("Multipy by {0}", multiplyFirst), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+testRunner.And(string.Format("Multipy by {0}", multiplySecond), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+testRunner.Then(string.Format("Cash Value is {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
