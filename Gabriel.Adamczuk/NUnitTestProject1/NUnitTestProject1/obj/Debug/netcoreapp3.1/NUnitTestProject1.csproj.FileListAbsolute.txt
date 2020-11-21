@@ -89,7 +89,6 @@ C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUni
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.csprojAssemblyReference.cache
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.AssemblyInfoInputs.cache
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.AssemblyInfo.cs
-C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.csproj.CopyComplete
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.dll
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.pdb
@@ -97,3 +96,16 @@ C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUni
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Money.exe
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Money.pdb
 C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Money.exe.config
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\BoDi.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Cucumber.Messages.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Gherkin.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\Utf8Json.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Gabriel\source\repos\ZPSB202009\Gabriel.Adamczuk\NUnitTestProject1\NUnitTestProject1\obj\Debug\netcoreapp3.1\NUnitTestProject1.csproj.CoreCompileInputs.cache
