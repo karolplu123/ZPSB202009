@@ -1,23 +1,15 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
 using TechTalk.SpecFlow;
 
-namespace Lab3.Features
+namespace SpecFlowProject1.Steps
 {
     [Binding]
     public class SpecFlowFeature1Steps
     {
-        private IWebDriver webdriver;
-        public SpecFlowFeature1Steps(IWebDriver driver)
-        {
-            webdriver = driver;
-        }
-
         [Given(@"I enter wp\.pl")]
         public void GivenIEnterWp_Pl()
         {
             //ScenarioContext.Current.Pending();
-            webdriver.Navigate().GoToUrl("http://www.wp.pl");
         }
         
         [Given(@"I click on (.*)")]
