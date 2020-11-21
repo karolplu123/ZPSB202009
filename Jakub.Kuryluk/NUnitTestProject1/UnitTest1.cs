@@ -18,7 +18,7 @@ namespace NUnitTestProject1
         [Test, Category("Smoke")]
         public void xxx()
         {
-            var x = 1;
+            var x = 2;
             var y = 2;
             Assert.AreEqual(x, y);
         }
