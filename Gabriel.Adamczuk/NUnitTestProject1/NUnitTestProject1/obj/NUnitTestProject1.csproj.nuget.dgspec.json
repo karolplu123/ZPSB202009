@@ -46,9 +46,21 @@
               "target": "Package",
               "version": "[16.4.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.6, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[3.15.1, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.4.31, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.4.31, )"
             },
             "nunit": {
               "target": "Package",
