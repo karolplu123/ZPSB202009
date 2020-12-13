@@ -24,12 +24,16 @@ namespace SpecFlowSeleniumTests
         [BeforeScenario]
         public void BeforeScenario()
         {
-            webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            webdriver = DriverFactory.GetDriver(TypeDriver.Firefox);
+            //webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             _objectContainer.RegisterInstanceAs<IWebDriver>(webdriver);
         }
         [AfterScenario]
         public void AfterScenario()
         {
+            var errorClass = new SaveErrorDetails(webdriver);
+            errorClass.SaveScreenshotAndLogsOnError();
+
             webdriver.Close();
             webdriver.Dispose();
         }
