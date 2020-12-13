@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Lab3.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -12,11 +13,14 @@ namespace Lab3.Features
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
+        private LoginEmailPage loginPage;
         public SpecFlowFeature1Steps(IWebDriver driver)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            loginPage = new LoginEmailPage(webdriver);
+
         }
 
         [Given(@"I enter wp\.pl")]
@@ -37,7 +41,8 @@ namespace Lab3.Features
         {
             // bad practice
             Thread.Sleep(5000);
-            var firstXPath = "/html/body/div[2]/div[5]/div[2]/div[3]/a[1]";
+            //var firstXPath = "/html/body/div[2]/div[5]/div[2]/div[3]/a[1]";
+            var firstXPath = "/html/body/div[2]/div[8]/div[2]/div[3]/a[1]";
             var elementPoczta = webdriver.FindElement(By.XPath(firstXPath));
             elementPoczta.Click();
         }
@@ -45,15 +50,17 @@ namespace Lab3.Features
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            var login = webdriver.FindElement(By.Id("login"));
-            login.SendKeys("Test");
+            //var login = webdriver.FindElement(By.Id("login"));
+            //login.SendKeys("Test");
+            loginPage.login.SendKeys("pomidor");
         }
         
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            var pass = webdriver.FindElement(By.Name("password"));
-            pass.SendKeys("pomidor");
+            //var pass = webdriver.FindElement(By.Name("password"));
+            //pass.SendKeys("pomidor");
+            loginPage.pass.SendKeys("pomidor");
         }
         
         [When(@"I press submit")]

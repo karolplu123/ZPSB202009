@@ -28,7 +28,8 @@ namespace Lab3.Hooks
         public void BeforeScenario()
         {
             //TODO: implement logic that has to run before executing each scenario
-            webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            webdriver = DriverFactory.GetDriver(TypeDriver.Firefox);
+            //webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             _objectContainer.RegisterInstanceAs<IWebDriver>(webdriver);
         }
 
@@ -36,6 +37,8 @@ namespace Lab3.Hooks
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
+            var errorClass = new SaveErrorDetails(webdriver);
+            errorClass.SaveScreenshotAndLogsOnError();
             webdriver.Close();
             webdriver.Dispose();
         }
