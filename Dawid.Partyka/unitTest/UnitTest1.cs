@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using NUnit.Samples.Cash;
+using Moq;
 
 namespace unitTest
 {
@@ -37,7 +38,6 @@ namespace unitTest
         /// <summary>
         /// Assert that multiplying currency in Cash happens correctly
         /// </summary>
-        ///
         [Test]
         public void SimpleMultiply()
         {
@@ -138,32 +138,91 @@ namespace unitTest
             Assert.AreEqual(chf.GetHashCode(), chf2.Multiply(2).GetHashCode());
         }
 
-        [Test]
-        public void CashBagNegate()
+        /// <summary>
+        /// Test CashBag method Equals with Cash object expecting output = false
+        /// </summary>
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        public void CashBagWithCashObjectEqualsTests(int cur)
         {
-            CashBag test = new CashBag(new Cash(1, "CAD"), new Cash(1, "PLN"));
-            test = (CashBag)test.Negate();
+            // arrange
+            Cash dummy = new Cash(cur, "CAD");
 
-            Assert.AreEqual(new CashBag(new Cash(-1, "PLN"), new Cash(-1, "CAD")), test);
+            // act
+            CashBag test = new CashBag(dummy, new Cash(3, "USD"));
+            bool dummyTest = test.Equals(dummy);
+
+            // assert
+            Assert.AreEqual(false, dummyTest);
         }
 
-        [Test]
-        public void CashBagAppend()
+        /// <summary>
+        /// Test CashBag method Equals with CashBag passed as parameter
+        /// </summary>
+        [TestCase(1, "CHF", 5, "USD", 5, true)]
+        [TestCase(104, "CAD", 44, "CKR", 44, true)]
+        [TestCase(25, "PLN", 3, "USD", 3, true)]
+        [TestCase(1, "CHF", 2, "CAD", 3, false)]
+        public void CashBagEqualsTest(int c1, string c1n, int c2, string c2n, int c3, bool expected)
         {
-            Cash chf1 = new Cash(6, "CHF");
-            Cash chf2 = (Cash)chf1.Negate();
-            Cash cad = new Cash(1, "CAD");
-            Cash usd = new Cash(7, "USD");
+            // arrange
+            Cash cash1 = new Cash(c1, c1n);
+            Cash cash2 = new Cash(c2, c2n);
+            Cash cash3 = new Cash(c3, c2n);
 
-            CashBag test = new CashBag(new CashBag(chf1, cad), new CashBag(chf2, usd));
-            CashBag compare = new CashBag(cad, usd);
+            // act
+            CashBag testEquals = new CashBag(cash1, cash2);
+            CashBag equalsTo = new CashBag(cash1, cash3);
 
-            Assert.AreEqual(test, compare);
+            // assert
+            Assert.AreEqual(expected, testEquals.Equals(equalsTo));
+        }
+
+        /// <summary>
+        /// Test CashBag Equals method with CashBag having different amount of
+        /// currencies stored passed as parameter expecting output = false
+        /// </summary>
+        [TestCase(1, 2, 3, "USD", "CAD", "CHF")]
+        [TestCase(5, 7, 8, "PLN", "CAD", "USD")]
+        [TestCase(2, 3, 5, "CKR", "USD", "CHF")]
+        public void CashBagEqualsDifferentCurrenciesLengthTest(int a, int b, int c, string c1, string c2, string c3)
+        {
+            // arrange
+            Cash cash1 = new Cash(a, c1);
+            Cash cash2 = new Cash(b, c2);
+            Cash cash3 = new Cash(c, c3);
+
+            // act
+            CashBag test = new CashBag(cash1, cash2);
+            CashBag breakTest = new CashBag(cash1, cash2);
+            breakTest = (CashBag)breakTest.AddMoney(cash3);
+
+            // assert
+            Assert.AreEqual(false, test.Equals(breakTest));
         }
 
         [TearDown]
         public void Teardown() {
             Console.WriteLine("This is TearDown");
         }
+
+        [Test]
+        [Category("Unit")]
+        public void TestMock()
+        {
+            //assert
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new Cash(1, "CHF"));
+
+            //act
+            Cash.AddMoneyBag(mockBag.Object);
+
+            //assert
+            Assert.IsTrue(true);
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Once());
+        }
+
     }
 }
