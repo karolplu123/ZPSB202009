@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using TechTalk.SpecFlow;
 
-namespace SpecFlowProject1.Hooks
+namespace SpecFlowSeleniumTests
 {
     [Binding]
     public sealed class Hooks1

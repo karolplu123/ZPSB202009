@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SpecFlowProject2.Pages;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -12,12 +13,15 @@ namespace SpecFlowProject2
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
+        private LoginEmailPage loginPage;
 
         public SpecFlowFeature1Steps(IWebDriver driver)
         {
+            loginPage = new LoginEmailPage(webdriver);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            loginPage = new LoginEmailPage(webdriver);
         }
 
 
@@ -50,15 +54,22 @@ namespace SpecFlowProject2
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            var login = webdriver.FindElement(By.Id("login"));
-            login.SendKeys("Test");
+            //var login = webdriver.FindElement(By.Id("login"));
+            //login.SendKeys("Test");
+            
+            loginPage.login.SendKeys("login");
+           
+            //loginPage.login.SendKeys("login");
         }
 
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            var pass = webdriver.FindElement(By.Name("password"));
-            pass.SendKeys("pomidor");
+            //var pass = webdriver.FindElement(By.Name("password"));
+            //pass.SendKeys("pomidor");
+       
+            loginPage.pass.SendKeys("pomidor");
+
         }
         
         [When(@"I press submit")]

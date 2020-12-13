@@ -1960,15 +1960,6 @@
         "runtime": {
           "lib/netstandard2.0/Utf8Json.dll": {}
         }
-      },
-      "Cash/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Cash.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Cash.dll": {}
-        }
       }
     }
   },
@@ -6832,16 +6823,11 @@
         "utf8json.1.3.7.nupkg.sha512",
         "utf8json.nuspec"
       ]
-    },
-    "Cash/1.0.0": {
-      "type": "project",
-      "path": "../../../Krzysiek.Gibert/MoneyZPSB/Money/Cash.csproj",
-      "msbuildProject": "../../../Krzysiek.Gibert/MoneyZPSB/Money/Cash.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Cash >= 1.0.0",
+      "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj",
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "Moq >= 4.14.6",
       "NUnit3TestAdapter >= 3.15.1",
@@ -6856,11 +6842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\NUnitTestProject1\\NUnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\Zajęcia1\\NUnitTestProject1\\NUnitTestProject1.csproj",
       "projectName": "NUnitTestProject1",
-      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\NUnitTestProject1\\NUnitTestProject1.csproj",
+      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\Zajęcia1\\NUnitTestProject1\\NUnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\NUnitTestProject1\\obj\\",
+      "outputPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\NUnitTestProject1\\Zajęcia1\\NUnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6876,8 +6862,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj": {
-              "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj"
+            "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj": {
+              "projectPath": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj"
             }
           }
         }
@@ -6934,5 +6920,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Nie można znaleźć projektu „C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj”. Sprawdź, czy odwołanie projektu jest prawidłowe i czy plik projektu istnieje.",
+      "libraryId": "C:\\Users\\Gabriel\\source\\repos\\ZPSB202009\\Gabriel.Adamczuk\\Krzysiek.Gibert\\MoneyZPSB\\Money\\Cash.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

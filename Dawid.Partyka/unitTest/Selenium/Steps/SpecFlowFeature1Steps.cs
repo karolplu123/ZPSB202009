@@ -12,11 +12,14 @@ namespace SpecFlowSeleniumTests.Features
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
+        private LoginEmailPage loginPage;
+        
         public SpecFlowFeature1Steps(IWebDriver driver)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            loginPage = new LoginEmailPage(webdriver);
         }
 
 
@@ -26,6 +29,7 @@ namespace SpecFlowSeleniumTests.Features
             webdriver.Navigate().GoToUrl("http://www.wp.pl");
             //wait for load
             Thread.Sleep(5000);
+            //var popup = "/ html / body / div[2] / div / div[2] / div[1] / div / button[2]"; // <-- wersja wyrzucająca błąd razem z screenshotem
             var popup = "/ html / body / div[2] / div / div[2] / div[3] / div / button[2]";
             var element = webdriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(popup)));
             // bad practice
@@ -46,15 +50,13 @@ namespace SpecFlowSeleniumTests.Features
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            var login = webdriver.FindElement(By.Id("login"));
-            login.SendKeys("Test");
+            loginPage.login.SendKeys("Test");
         }
 
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            var pass = webdriver.FindElement(By.Name("password"));
-            pass.SendKeys("pomidor");
+            loginPage.pass.SendKeys("pomidor");
         }
 
         [When(@"I press submit")]
