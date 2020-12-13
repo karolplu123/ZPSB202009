@@ -24,7 +24,8 @@ namespace SpecFlowProject1.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+           // webdriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            webdriver = DriverFactory.GetDriver(TypeDriver.Edge);
             _objectContainer.RegisterInstanceAs<IWebDriver>(webdriver);
         }
         [AfterScenario]

@@ -75,6 +75,11 @@ namespace NUnitTestProjectIgorOjrzynski
         //    Assert.AreEqual(expected, f14CHF.Multiply(2));
         }
 
+        
+        
+        
+        //Point 6 
+
         /// <summary>
         /// Test set Currency , Data-Driven Testing
         /// </summary>
