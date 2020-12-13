@@ -14,8 +14,10 @@ namespace SpecFlowSeleniumTests
         {
             webdriver = driver;
         }
-        public IWebElement login => webdriver.FindElement(By.Id("login"));
-        public IWebElement pass => webdriver.FindElement(By.Name("password"));
+        public IWebElement login => webdriver.FindElement(By.XPath("//*[@id=\"login\"]"));
+        public IWebElement pass => webdriver.FindElement(By.XPath("//*[@id=\"password\"]"));
+        public IWebElement submit => webdriver.FindElement(By.XPath("//*[@id=\"loginForm\"]/div[3]/button"));
+        public IWebElement failMessage => webdriver.FindElement(By.XPath("//*[@id=\"formError\"]/span[1]"));
 
     }
 }
