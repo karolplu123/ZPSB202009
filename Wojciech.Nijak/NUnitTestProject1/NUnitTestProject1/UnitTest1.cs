@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System;
 using NUnit.Samples.Cash;
-
+using Moq;
 
 namespace NUnitTestProject1
 {
@@ -66,5 +66,22 @@ namespace NUnitTestProject1
 
             Assert.AreEqual(c.Currency, c2.Currency);
         }
+
+        [Test]
+        [Category("Unit")]
+        public void TestMock()
+        {
+            //assert
+            var Cash = new Cash(2, "PLN");
+            var mockBag = new Mock<ICash>();
+            mockBag.Setup(x => x.AddMoney(It.IsAny<Cash>())).Returns(new
+                Cash(1, "CHF"));
+            //act
+            Cash.AddMoneyBag(mockBag.Object);
+            //assert
+            Assert.IsTrue(true);
+            mockBag.Verify(mock => mock.AddMoney(It.IsAny<Cash>()), Times.Never());
+        }
+
     }
 }
