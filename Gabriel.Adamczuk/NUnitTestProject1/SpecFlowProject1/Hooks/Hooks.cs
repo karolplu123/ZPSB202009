@@ -1,6 +1,7 @@
-﻿using BoDi;
+using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SpecFlowProject1;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,6 +33,8 @@ namespace SpecFlowSeleniumTests
         {
             webdriver.Close();
             webdriver.Dispose();
+            var errorClass = new SaveErrorDetails(webdriver);
+            errorClass.SaveScreenshotAndLogsOnError();
         }
     }
 }
