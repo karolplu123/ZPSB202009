@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Threading;
+using NUnit.Framework;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 
@@ -11,11 +12,14 @@ namespace SpecFlowProject2.Features
     {
         private IWebDriver webdriver;
         private WebDriverWait webdriverWait;
+        private LoginEmailPage loginPage;
         public SpecFlowFeature2Steps(IWebDriver driver)
         {
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webdriver = driver;
             webdriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            loginPage = new LoginEmailPage(webdriver);
         }
         [Given(@"I enter wp\.pl")]
         public void GivenIEnterWp_Pl()
@@ -23,7 +27,7 @@ namespace SpecFlowProject2.Features
             webdriver.Navigate().GoToUrl("http://www.wp.pl");
             //wait for load
             Thread.Sleep(5000);
-            var popup = "/html/body/div[3]/div[2]/div[1]/div[3]/button[2]";
+            var popup = "/html/body/div[2]/div/div[2]/div[3]/div/button[2]";
             var element =
                 webdriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(popup)));
             // bad practice
@@ -35,26 +39,25 @@ namespace SpecFlowProject2.Features
         {
             // bad practice
             Thread.Sleep(5000);
-            var firstXPath = "//*[@id=\"root\"]/div/div[4]/div[2]/div[2]/a[1]";
+            var firstXPath = "/html/body[@class='header-static header-big']/div[@id='root']/div[@id='site-header']/div[@class='sc-1tw0du9-1 hSFyGN']/div[@class='sc-1tw0du9-2 ibrNxJ']/a[@class='sc-1x1888b-2 dGNziy'][1]";
             var elementPoczta = webdriver.FindElement(By.XPath(firstXPath));
             elementPoczta.Click();
         }
         [When(@"I fill wrong email login")]
         public void WhenIFillWrongEmailLogin()
         {
-            var login = webdriver.FindElement(By.Id("login"));
-            login.SendKeys("Test");
+            loginPage.login.SendKeys("Test");
         }
         [When(@"I fill wrong password")]
         public void WhenIFillWrongPassword()
         {
-            var pass = webdriver.FindElement(By.Name("password"));
-            pass.SendKeys("pomidor");
+            loginPage.pass.SendKeys("pomidor");
+
         }
         [When(@"I press submit")]
         public void WhenIPressSubmit()
         {
-            var submitBtnCssSelector = "#btnSubmit";
+            var submitBtnCssSelector = "#loginForm > div.notificationWrapper > button";
             var submitBtn = webdriver.FindElement(By.CssSelector(submitBtnCssSelector));
             Thread.Sleep(5000);
             submitBtn.Click();
@@ -63,7 +66,10 @@ namespace SpecFlowProject2.Features
         [Then(@"I expect to see message as „Niestety podany login lub hasło jest błędne\.”")]
         public void ThenIExpectToSeeMessageAsNiestetyPodanyLoginLubHasloJestBledne_()
         {
-            //Zaimplementowac
+            var spanElemPath = "//*[@id='formError']/span[1]";
+            var spanElem = webdriver.FindElement(By.XPath(spanElemPath));
+
+            Assert.AreEqual("Podany login i/lub hasło są nieprawidłowe.", spanElem.Text);
         }
 
     }
